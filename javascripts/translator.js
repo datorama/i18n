@@ -134,8 +134,7 @@
 		debugMode = isDebug;
 	};
 	
-	var da = da || {};
-	da.i18n = translate;
+	(window).dai18n = translate;
 	
 	$.getJSON(translationFilePath + defaultTranslation + "?version=" + Date().toString(), function (data) {
 		defaultTranslationMap = data;
