@@ -57,12 +57,12 @@ Each file contains key-value pairs for the language they translate.</p>
 
 <p>Without arguments:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">dai18n</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">);</span>
 </pre></div>
 
 <p>With arguments:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">(</span><span class="s2">"Welcome"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"David Krivushe"</span><span class="p">]);</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">dai18n</span><span class="p">(</span><span class="s2">"Welcome"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"David Krivushe"</span><span class="p">]);</span>
 </pre></div>
 
 <h2>
@@ -71,12 +71,12 @@ Each file contains key-value pairs for the language they translate.</p>
 <p>To load the requested dictionary, you need to set the current culture.
 The <em>.json</em> file should match the culture name.</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">setCulture</span><span class="p">(</span><span class="s2">"fr-FR"</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">dai18n</span><span class="p">.</span><span class="nx">setCulture</span><span class="p">(</span><span class="s2">"fr-FR"</span><span class="p">);</span>
 </pre></div>
 
 <p>If a <em>.json</em> file that matches the culture is not found, the default dictionary will be used.</p>
 
-<p>All subsequent calls to <em>da.i18n</em> will return translations from the recently loaded dictionary.
+<p>All subsequent calls to <em>dai18n</em> will return translations from the recently loaded dictionary.
 If a translation is not found in the current culture's dictionary, the translation function will return the default translation.</p>
 
 <h2>
@@ -84,7 +84,7 @@ If a translation is not found in the current culture's dictionary, the translati
 
 <p>You can translate an entire HTML template (or any other template/text) with the <em>translateTemplate</em> function:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">translateTemplate</span><span class="p">(</span><span class="nx">templateString</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">dai18n</span><span class="p">.</span><span class="nx">translateTemplate</span><span class="p">(</span><span class="nx">templateString</span><span class="p">);</span>
 </pre></div>
 
 <p>This will look for <em>{key}</em> in the template and replace them with translations from the current culture.</p>
@@ -99,7 +99,7 @@ If a translation is not found in the current culture's dictionary, the translati
 
 <p>You can set debug mode on/off by calling the <em>setDebug</em> function:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">setDebug</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<div class="highlight highlight-javascript"><pre><span class="nx">dai18n</span><span class="p">.</span><span class="nx">setDebug</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
 </pre></div>
 
 <p>This will result in alerts popping up when no translation is found for a certain key.</p>
