@@ -16,7 +16,6 @@
 		$(document).ready(function() {
 			setTimeout(function() {
 				$(".currCulture").text("None");
-				$(".message").text(dai18n("Hello", ["David Krivushe"]));
 				
 				var runTranslate = function() {
 					$(".message1").text(dai18n("Welcome"));
@@ -30,13 +29,14 @@
 				$(".changeFrench").unbind("click").bind("click", function() {
 					dai18n.setCulture("fr-FR");
 					$(".currCulture").text("fr-FR");
-					runTranslate();
+					
+					setTimeout(runTranslate, 300);
 				});
 				
 				$(".changeDefault").unbind("click").bind("click", function() {
 					dai18n.setCulture("default");
-					$(".currCulture").text("default");
-					runTranslate();
+					$(".currCulture").text("Default");
+					setTimeout(runTranslate, 300);
 				});
 			}, 200);
 		});
@@ -64,7 +64,7 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h2><a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
-		Current culture is: <label class="currCulture"></label>
+		Current culture is: <label class="currCulture"></label><br/>
 		<input type="button" value="French" class="changeFrench"></input><input type="button" value="Default" class="changeDefault"></input>
 		<h3>Translation without argument:</h3>
 		<label class="message1"></label>
