@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <script type="text/javascript" src="javascripts/jquery-1.10.2.min.js" />
+  <script type="text/javascript" src="javascripts/translator.min.js" />
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Datorama i18n : JavaScript library for text and template translation" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Datorama i18n</title>
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".currCulture").text("None");
+			$(".message").text(da.i18n("Hello", ["David Krivushe"]));
+			
+			var runTranslate = function() {
+				$(".message1").text(da.i18n("Welcome"));
+				$(".message2").text(da.i18n("Hello", ["David Krivushe"]));
+				$(".message3").text(da.i18n("Thanks"));
+				$(".message4").text(da.i18n.translateTemplate("{Bye} and {Thanks}"));
+			};
+			
+			$("changeFrench").unbind("click").bind("click", function() {
+				da.i18n.setCulture("fr-FR");
+				$(".currCulture").text("fr-FR");
+				runTranslate();
+			});
+			
+			$("changeDefault").unbind("click").bind("click", function() {
+				da.i18n.setCulture("default");
+				$(".currCulture").text("default");
+				runTranslate();
+			});
+		});
+	</script>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/datorama/i18n">View on GitHub</a>
+
+          <h1 id="project_title">Datorama i18n</h1>
+          <h2 id="project_tagline">JavaScript library for text and template translation</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/datorama/i18n/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/datorama/i18n/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2><a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+		Current culture is: <label class="currCulture"></label>
+		<input type="button" value="French" class="changeFrench"></input><input type="button" value="Default" class="changeDefault"></input>
+		<h3>Translation without argument:</h3>
+		<label class="message1"></label>
+		<h3>Translation with argument:</h3>
+		<label class="message2"></label>
+		<h3>Translation that only exists in default:</h3>
+		<label class="message3"></label>
+		<h3>Template translation:</h3>
+		<label class="message4"></label>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Datorama i18n maintained by <a href="https://github.com/datorama">datorama</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
