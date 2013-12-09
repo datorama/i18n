@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Datorama i18n : JavaScript library for text and template translation" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Datorama i18n</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/datorama/i18n">View on GitHub</a>
+
+          <h1 id="project_title">Datorama i18n</h1>
+          <h2 id="project_tagline">JavaScript library for text and template translation</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/datorama/i18n/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/datorama/i18n/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>Datorama i18n is a JavaScript plugin for client-side translations.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Download the latest <a href="http://docs.jquery.com/Downloading_jQuery#Current_Release">jQuery library</a>, and include it before <em>translator.js</em> in your HTML source.</p>
+
+<h2>
+<a name="creating-translation-files" class="anchor" href="#creating-translation-files"><span class="octicon octicon-link"></span></a>Creating translation files</h2>
+
+<p>The library uses <em>.json</em> files as dictionaries to translate the requested text.
+The files should be located in the <em>translations</em> folder.
+Each file contains key-value pairs for the language they translate.</p>
+
+<p>The values can also contain argument placeholders in the form of {#argument_id} (i.e. "Welcome": "Welcome {0}")</p>
+
+<p>Check out the <em>translations</em> folder and the files within it for examples.</p>
+
+<h2>
+<a name="translating" class="anchor" href="#translating"><span class="octicon octicon-link"></span></a>Translating</h2>
+
+<p>Without arguments:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">);</span>
+</pre></div>
+
+<p>With arguments:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">(</span><span class="s2">"Welcome"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"David Krivushe"</span><span class="p">]);</span>
+</pre></div>
+
+<h2>
+<a name="setting-the-current-culture" class="anchor" href="#setting-the-current-culture"><span class="octicon octicon-link"></span></a>Setting the current culture</h2>
+
+<p>To load the requested dictionary, you need to set the current culture.
+The <em>.json</em> file should match the culture name.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">setCulture</span><span class="p">(</span><span class="s2">"fr-FR"</span><span class="p">);</span>
+</pre></div>
+
+<p>If a <em>.json</em> file that matches the culture is not found, the default dictionary will be used.</p>
+
+<p>All subsequent calls to <em>da.i18n</em> will return translations from the recently loaded dictionary.
+If a translation is not found in the current culture's dictionary, the translation function will return the default translation.</p>
+
+<h2>
+<a name="template-translations" class="anchor" href="#template-translations"><span class="octicon octicon-link"></span></a>Template translations</h2>
+
+<p>You can translate an entire HTML template (or any other template/text) with the <em>translateTemplate</em> function:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">translateTemplate</span><span class="p">(</span><span class="nx">templateString</span><span class="p">);</span>
+</pre></div>
+
+<p>This will look for <em>{key}</em> in the template and replace them with translations from the current culture.</p>
+
+<h2>
+<a name="default-translations" class="anchor" href="#default-translations"><span class="octicon octicon-link"></span></a>Default translations</h2>
+
+<p>If no translation is found - The key will be returned.</p>
+
+<h2>
+<a name="debugging" class="anchor" href="#debugging"><span class="octicon octicon-link"></span></a>Debugging</h2>
+
+<p>You can set debug mode on/off by calling the <em>setDebug</em> function:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">da</span><span class="p">.</span><span class="nx">i18n</span><span class="p">.</span><span class="nx">setDebug</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</pre></div>
+
+<p>This will result in alerts popping up when no translation is found for a certain key.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Datorama i18n maintained by <a href="https://github.com/datorama">datorama</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
