@@ -25,6 +25,8 @@
 					$(".message4").text(dai18n.translateTemplate("{Bye} and {Thanks}"));
 				};
 				
+				runTranslate();
+				
 				$(".changeFrench").unbind("click").bind("click", function() {
 					dai18n.setCulture("fr-FR");
 					$(".currCulture").text("fr-FR");
