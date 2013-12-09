@@ -20,7 +20,7 @@
 	 * File names should be: culture.json (i.e. en-US.json)
 	 */
 	var translationFilePath = "translations/";
-	var defaultTranslation = "default.json";
+	var defaultTranslation = "default.js";
 	var debugMode = false;
 	
 	/*
@@ -111,7 +111,7 @@
 	translate.setCulture = function (newCulture) {
 		translationMap = null;
 		$.ajax({
-			url: translationFilePath + newCulture + ".json?version=" + Date().toString(),
+			url: translationFilePath + newCulture + ".js?version=" + Date().toString(),
 			dataType: "json",
 			error: function() {
 				console.log("No culture file");
