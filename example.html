@@ -14,27 +14,29 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$(".currCulture").text("None");
-			$(".message").text(da.i18n("Hello", ["David Krivushe"]));
-			
-			var runTranslate = function() {
-				$(".message1").text(da.i18n("Welcome"));
-				$(".message2").text(da.i18n("Hello", ["David Krivushe"]));
-				$(".message3").text(da.i18n("Thanks"));
-				$(".message4").text(da.i18n.translateTemplate("{Bye} and {Thanks}"));
-			};
-			
-			$("changeFrench").unbind("click").bind("click", function() {
-				da.i18n.setCulture("fr-FR");
-				$(".currCulture").text("fr-FR");
-				runTranslate();
-			});
-			
-			$("changeDefault").unbind("click").bind("click", function() {
-				da.i18n.setCulture("default");
-				$(".currCulture").text("default");
-				runTranslate();
-			});
+			setTimeout(function() {
+				$(".currCulture").text("None");
+				$(".message").text(da.i18n("Hello", ["David Krivushe"]));
+				
+				var runTranslate = function() {
+					$(".message1").text(da.i18n("Welcome"));
+					$(".message2").text(da.i18n("Hello", ["David Krivushe"]));
+					$(".message3").text(da.i18n("Thanks"));
+					$(".message4").text(da.i18n.translateTemplate("{Bye} and {Thanks}"));
+				};
+				
+				$("changeFrench").unbind("click").bind("click", function() {
+					da.i18n.setCulture("fr-FR");
+					$(".currCulture").text("fr-FR");
+					runTranslate();
+				});
+				
+				$("changeDefault").unbind("click").bind("click", function() {
+					da.i18n.setCulture("default");
+					$(".currCulture").text("default");
+					runTranslate();
+				});
+			}, 200);
 		});
 	</script>
   </head>
