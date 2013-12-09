@@ -5,7 +5,7 @@
  * Licensed under the MIT license:
  * 	http://www.opensource.org/licenses/mit-license.php
  * 
- * 	Version 0.9
+ * 	Version 0.9.1
  */
 (function() {
 	/*
@@ -19,7 +19,7 @@
 	 * 
 	 * File names should be: culture.json (i.e. en-US.json)
 	 */
-	var translationFilePath = "resources/datorama/translator/translations/";
+	var translationFilePath = "translations/";
 	var defaultTranslation = "default.json";
 	var debugMode = false;
 	
@@ -134,7 +134,7 @@
 		debugMode = isDebug;
 	};
 	
-	da.i18n = translate;
+	(window).dai18n = translate;
 	
 	$.getJSON(translationFilePath + defaultTranslation + "?version=" + Date().toString(), function (data) {
 		defaultTranslationMap = data;

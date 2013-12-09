@@ -24,12 +24,12 @@ Translating
 
 Without arguments:
 ```javascript
-da.i18n("Hello");
+dai18n("Hello");
 ```
 
 With arguments:
 ```javascript
-da.i18n("Welcome", ["David Krivushe"]);
+dai18n("Welcome", ["David Krivushe"]);
 ```
 
 Setting the current culture
@@ -38,12 +38,12 @@ Setting the current culture
 To load the requested dictionary, you need to set the current culture.
 The _.json_ file should match the culture name.
 ```javascript
-da.i18n.setCulture("fr-FR");
+dai18n.setCulture("fr-FR");
 ```
 
 If a _.json_ file that matches the culture is not found, the default dictionary will be used.
 
-All subsequent calls to _da.i18n_ will return translations from the recently loaded dictionary.
+All subsequent calls to _dai18n_ will return translations from the recently loaded dictionary.
 If a translation is not found in the current culture's dictionary, the translation function will return the default translation.
 
 Template translations
@@ -51,7 +51,7 @@ Template translations
 
 You can translate an entire HTML template (or any other template/text) with the _translateTemplate_ function:
 ```javascript
-da.i18n.translateTemplate(templateString);
+dai18n.translateTemplate(templateString);
 ```
 
 This will look for _{key}_ in the template and replace them with translations from the current culture.
@@ -65,7 +65,7 @@ Debugging
 
 You can set debug mode on/off by calling the _setDebug_ function:
 ```javascript
-da.i18n.setDebug(true);
+dai18n.setDebug(true);
 ```
 
 This will result in alerts popping up when no translation is found for a certain key.
