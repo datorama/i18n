@@ -25,13 +25,13 @@
 					$(".message4").text(dai18n.translateTemplate("{Bye} and {Thanks}"));
 				};
 				
-				$("changeFrench").unbind("click").bind("click", function() {
+				$(".changeFrench").unbind("click").bind("click", function() {
 					dai18n.setCulture("fr-FR");
 					$(".currCulture").text("fr-FR");
 					runTranslate();
 				});
 				
-				$("changeDefault").unbind("click").bind("click", function() {
+				$(".changeDefault").unbind("click").bind("click", function() {
 					dai18n.setCulture("default");
 					$(".currCulture").text("default");
 					runTranslate();
